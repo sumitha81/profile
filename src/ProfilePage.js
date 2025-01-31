@@ -10,15 +10,21 @@
     });
     const [error, setError] = useState(null);
  
-    useEffect(() => {
+useEffect(() => {
         // Mock API Call to simulate fetching user data
         setTimeout(() => {
-        // Simulate user data from the API
-        setUser({
-            name: '',
-            email: '',
-            avatar: '/avatar.png', // Assuming the avatar.png is in the public folder
-        });
+            // Simulate an error (e.g., network failure)
+            const hasError = false; // Change this for testing the error condition
+    
+            if (hasError) {
+                setError('Failed to load user data');
+            } else {
+                setUser({
+                    name: '',
+                    email: '',
+                    avatar: '/avatar.png', // Assuming the avatar.png is in the public folder
+                });
+            }
         }, 1000);
     }, []);
 
